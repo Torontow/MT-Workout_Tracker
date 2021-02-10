@@ -15,9 +15,20 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+// may not have to do this here because it is in the seed.js
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { useNewUrlParser: true });
 
-// Insert code here
+// INSERT CODE HERE
+
+// GET last workout "/api/workouts" (find method)
+
+// ADD an exercise "/api/workouts/:id" (put method)
+
+// CREATE workout "/api/workouts" (post method)
+
+// GET workout range "/api/workouts/range"
+
+
 
 
 app.listen(PORT, () => {
