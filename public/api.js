@@ -36,9 +36,9 @@ const API = {
   },
 
   async getWorkoutsInRange() {
-    const res = await fetch("/api/workouts/range"); // are these ticks ok???
+    
+    const res = await fetch("/api/workouts/range");
     const json = await res.json();
-
     return json;
   },
 };
