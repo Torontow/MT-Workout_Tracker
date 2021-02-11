@@ -19,23 +19,25 @@ app.use(express.static("public"));
 // may not have to do this here because it is in the seed.js
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-// INSERT CODE HERE
+// HTML ROUTES
 
-// get index.html
+// get index.html--DONE
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-// get exercise.html
+// get exercise.html--DONE
 app.get("/exercise", (req, res) => {
   res.sendFile(path.join(__dirname, "public/exercise.html"));
 });
 
-// get stats.html
+// get stats.html--DONE
 app.get("/stats", (req, res) => {
   res.sendFile(path.join(__dirname, "public/stats.html"))
 });
 // GET last workout "/api/workouts" (find method)
+
+// API ROUTES
 
 app.get("/api/workouts", (req, res) => {
   db.Workout.find()
@@ -49,9 +51,30 @@ app.get("/api/workouts", (req, res) => {
 
 // ADD an exercise "/api/workouts/:id" (put method)
 
-
-
+app.put("/api/workouts/:id", (req, res) => {
+  db.Workout.findByIdAndUpdate(
+    {_id: req.params.id},
+    { $push: { exercises: req.body } }
+  )
+  .then(dbWorkouts => {
+    res.json(dbWorkouts)
+  })
+  .catch(err => {
+    res.json(err);
+  })
+})
 // CREATE workout "/api/workouts" (post method)
+
+// app.post("/api/workouts", (req, res) => {
+//   db.Workout.create({})
+//     .then(dbWorkouts => {
+//       res.json(dbWorkouts)
+//     })
+//     .catch(err => {
+//       res.json(err)
+//     })
+// })
+
 
 // GET workout range "/api/workouts/range"
 
