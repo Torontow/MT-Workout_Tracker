@@ -37,19 +37,19 @@ app.get("/stats", (req, res) => {
 });
 // GET last workout "/api/workouts" (find method)
 
-// app.get("/workouts", (req, res) => {
-//   db.Note.find({})
-//     .then(dbWorkout => {
-//       res.json(dbWorkout);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
-
-
+app.get("/api/workouts", (req, res) => {
+  db.Workout.find()
+    .then(dbWorkouts => {
+      res.json(dbWorkouts);
+    })
+    .catch(err => {
+      res.json(err)
+    })
+})
 
 // ADD an exercise "/api/workouts/:id" (put method)
+
+
 
 // CREATE workout "/api/workouts" (post method)
 
