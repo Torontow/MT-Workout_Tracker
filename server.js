@@ -65,6 +65,16 @@ app.put("/api/workouts/:id", (req, res) => {
 })
 // CREATE workout "/api/workouts" (post method)
 
+app.post("/api/workouts/", (req, res) => {
+  db.Workout.create({})
+  .then(dbWorkouts => {
+    res.json(dbWorkouts)
+  })
+  .catch(err => {
+    res.json(err)
+  })
+})
+
 // app.post("/api/workouts", (req, res) => {
 //   db.Workout.create({})
 //     .then(dbWorkouts => {
