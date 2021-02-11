@@ -75,15 +75,6 @@ app.post("/api/workouts/", (req, res) => {
   })
 })
 
-// app.post("/api/workouts", (req, res) => {
-//   db.Workout.create({})
-//     .then(dbWorkouts => {
-//       res.json(dbWorkouts)
-//     })
-//     .catch(err => {
-//       res.json(err)
-//     })
-// })
 
 
 // GET workout range "/api/workouts/range"
