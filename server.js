@@ -29,17 +29,17 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
 
 // get index.html--DONE
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'))
+  res.sendFile(path.join(__dirname, './public/index.html'))
 })
 
 // get exercise.html--DONE
 app.get('/exercise', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/exercise.html'))
+  res.sendFile(path.join(__dirname, './public/exercise.html'))
 })
 
 // get stats.html--DONE
 app.get('/stats', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/stats.html'))
+  res.sendFile(path.join(__dirname, './public/stats.html'))
 })
 // GET last workout "/api/workouts" (find method)
 
@@ -95,7 +95,7 @@ app.get('/api/workouts/range', (req, res) => {
     .limit(7)
     .then(dbWorkouts => {
       console.log(dbWorkouts);
-      res,json(dbWorkouts.reverse())
+      res.json(dbWorkouts.reverse())
     })
     .catch(err => {
       res.json(err)
