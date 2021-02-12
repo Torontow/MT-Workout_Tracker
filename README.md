@@ -1,7 +1,5 @@
 # MT-Workout_Tracker
 
-![Site Screenshot](images/Screens-shot.png)
-
 ## Description
 
 This is a handy dandy fitness tracker for all you exercise enthusiasts out there. You are able to log your resistance training and your cardio and keep track of your progress over time. 
@@ -33,6 +31,8 @@ No matter which option you choose, you will then be presented with a screen wher
 Follow the prompts to enter details about the exercise, and click "Add Exercise" when you are finished. Continue adding exercises for that workout until you are finished, at which point you can click "Complete" and that entire workout will be logged.
 
 When you want to see how you have been faring, follow navigation to Dashboard in the top left corner of the site. From there you will be taken to a series of charts and graphs to see each exercise and totals of how far you traveled on your runs, or how much you benched over the week.
+
+![Workout Dashboard Shot](images/dashboard.png)
 
 ## Contributing
 
