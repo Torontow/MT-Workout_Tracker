@@ -16,7 +16,7 @@ This is a handy dandy fitness tracker for all you exercise enthusiasts out there
 
 ## Installation
 
-Simply navigate to .
+Simply navigate to the page [here](https://mysterious-chamber-03370.herokuapp.com/).
 
 ## Usage
 
