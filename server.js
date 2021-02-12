@@ -17,7 +17,6 @@ app.use(express.json())
 
 app.use(express.static('public'))
 
-// may not have to do this here because it is in the seed.js
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -27,21 +26,17 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
 
 // HTML ROUTES
 
-// get index.html--DONE
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'))
 })
 
-// get exercise.html--DONE
 app.get('/exercise', (req, res) => {
   res.sendFile(path.join(__dirname, './public/exercise.html'))
 })
 
-// get stats.html--DONE
 app.get('/stats', (req, res) => {
   res.sendFile(path.join(__dirname, './public/stats.html'))
 })
-// GET last workout "/api/workouts" (find method)
 
 // API ROUTES
 
@@ -59,8 +54,6 @@ app.get('/api/workouts', (req, res) => {
     })
 })
 
-// ADD an exercise "/api/workouts/:id" (put method)
-
 app.put('/api/workouts/:id', (req, res) => {
   db.Workout.findByIdAndUpdate(
     { _id: req.params.id },
@@ -73,7 +66,6 @@ app.put('/api/workouts/:id', (req, res) => {
       res.json(err)
     })
 })
-// CREATE workout "/api/workouts" (post method)
 
 app.post('/api/workouts/', (req, res) => {
   db.Workout.create({})
